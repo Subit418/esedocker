@@ -57,7 +57,7 @@ pipeline {
 
     environment {
         // Deploy under a subfolder
-        DEPLOY_DIR = 'C:\\inetpub\\wwwroot\\withoutscm'
+        DEPLOY_DIR = 'C:\\inetpub\\wwwroot\\repokonaam'
         SITE_URL = 'http://localhost/withoutscm/index.html'
     }
 
@@ -152,3 +152,4 @@ pipeline {
         }
     }
 }
+

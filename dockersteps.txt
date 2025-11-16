@@ -1,0 +1,25 @@
+
+From folder
+docker build -t esedocker .
+docker ps
+docker run -d --name esedocker -p 7070:70 esedocker
+docker ps
+docker stop esedocker
+docker rm esedocker
+docker run -d --name esedocker -p 7070:80 esedocker
+
+
+
+make file extension through
+New-Item -Path . -Name "Dockerfile" -ItemType "file"
+
+
+from github
+docker build -t esedocker https://github.com/Subit418/esedocker.git
+docker run -d --name esedocker -p 7070:70 esedocker
+
+to test through python
+# Stop anything on port 80 if present (careful)
+# Serve files from C:\inetpub\wwwroot
+cd C:\inetpub\wwwroot
+python -m http.server 80

@@ -1,13 +1,14 @@
-# Serve static site with Nginx
+# Use lightweight nginx image to serve static files
 FROM nginx:alpine
 
-# Copy custom Nginx configuration file
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Remove default nginx content (optional)
+RUN rm -rf /usr/share/nginx/html/*
 
-# Copy all website files to the Nginx web root directory
+# Copy site files into nginx html directory
 COPY . /usr/share/nginx/html
 
-# Expose both default (80) and secondary (8081) HTTP ports
-EXPOSE 80 8081
+# Expose port 80
+EXPOSE 80
 
-# Nginx runs automatically on container start (no CMD needed)
+# Start nginx in foreground
+CMD ["nginx", "-g", "daemon off;"]
